@@ -55,10 +55,10 @@ def execute(dirName, appPath):
 	curFilePath = os.path.dirname(os.path.realpath(__file__))
 	subprocess.call([appPath, '-path:' +curFilePath+'\\' + dirName])
 
-def getFileNameSetInDir(path):
+def getFileNameSetInDir(pathToFile):
 	foundFiles = {}
 	exclude = {'.svn'}
-	for root, dirs, files in walk(derectory_To):
+	for root, dirs, files in walk(pathToFile):
 	    dirs[:] = [d for d in dirs if d not in exclude]
 	    for file in files:
 	    	file = file.lower()
@@ -66,6 +66,7 @@ def getFileNameSetInDir(path):
 	return foundFiles
 
 def copyFileThatExistInSet(filenameSet, dirFrom):
+	exclude = {'.svn'}
 	for root, dirs, files in walk(dirFrom):
 	    dirs[:] = [d for d in dirs if d not in exclude]
 	    for file in files:
@@ -74,8 +75,8 @@ def copyFileThatExistInSet(filenameSet, dirFrom):
 	    		fullPath = path.join(root, file)
 	    		copyfile(fullPath, filenameSet[file])
 
-def getNewestFolderInPath(path):
-	return max(glob.glob(os.path.join(path, '*/')), key=os.path.getmtime);
+def getNewestFolderInPath(pathToFile):
+	return max(glob.glob(os.path.join(pathToFile, '*/')), key=os.path.getmtime);
 
 config = parseConfig();
 tmpDirName= "TempBinFiles"

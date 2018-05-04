@@ -1,1 +1,0 @@
-python copyDllFromFolderToFolder.py --from "C:\projects\mwi2\5axis\customer\sampleintegration\ReleaseUnicode" --to "C:\Program Files\Rhinoceros 5 (64-bit)\System" --ext "dll"

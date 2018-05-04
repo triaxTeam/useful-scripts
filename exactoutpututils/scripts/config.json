@@ -1,8 +1,8 @@
 {
     "BinFilePath": "C:\\projects\\smoother_tests",
-    "ExectOutputPath": "C:\\projects\\mwi\\5axis\\test\\exactoutput\\ReleaseUnicode\\exactoutput.exe" ,
-    "TxtFile": "C:\\projects\\scripts\\exactoutput.dat",
+    "ExectOutputPath": "C:\\projects\\mwi3\\5axis\\test\\exactoutput\\ReleaseUnicode\\exactoutput.exe" ,
+    "TxtFile": "exactoutput.dat",
     "RegEx" : "(?:Error|Warning).*->.*->(.*\\.bin)",
-    "FolderWithRecalculated":"C:\\projects\\mwi\\5axis\\test\\exactoutput\\ReleaseUnicode",
+    "FolderWithRecalculated":"C:\\projects\\mwi3\\5axis\\test\\exactoutput\\ReleaseUnicode",
     "Actions":["calculate", "removeTmp", "copySource", "copyResult"]
 }
